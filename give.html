@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="fonts/local-styles.css">
+<link rel="stylesheet" href="style.css">
+<title>Give — Sugar Land Baptist Church</title>
+<style>
+:root {
+  --teal: #12B0DF;
+  --teal-dark: #038AA8;
+  --teal-light: #E8F8FC;
+  --black-overlay: rgba(0, 0, 0, 0.78);
+  --text: #666666;
+  --text-dark: #333333;
+  --text-muted: #999999;
+  --white: #FFFFFF;
+  --light-bg: #F7FAFB;
+  --border: #E0E0E0;
+  --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Open Sans', Arial, sans-serif; background: var(--white); color: var(--text); line-height: 1.7; font-size: 14px; font-weight: 500; }
+h1, h2, h3, h4 { font-family: 'Montserrat', Helvetica, Arial, sans-serif; color: var(--text-dark); }
+
+
+
+
+
+
+/* Header banner — matches SLBC's dark overlay style */
+.header-banner {
+  background: var(--black-overlay);
+  color: #fff; text-align: center; padding: 60px 24px 48px; position: relative;
+}
+.header-banner h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; color: #fff; }
+.header-banner p { font-size: 16px; opacity: 0.9; max-width: 600px; margin: 0 auto 24px; font-weight: 400; }
+
+/* Ghost button (SLBC style) */
+.btn-ghost {
+  display: inline-block; border: 2px solid var(--teal); color: var(--teal);
+  padding: 12px 32px; border-radius: 4px; font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+  text-decoration: none; transition: all 0.2s ease;
+}
+.btn-ghost:hover { background: var(--teal); color: #fff; }
+
+/* Solid teal button (for primary CTA) */
+.btn-solid {
+  display: inline-block; background: var(--teal); color: #fff;
+  padding: 14px 36px; border-radius: 4px; font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em;
+  text-decoration: none; transition: all 0.2s ease; border: 2px solid var(--teal);
+}
+.btn-solid:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+
+/* Container */
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* Section styling */
+section { padding: 48px 0; position: relative; }
+section.alt-bg { background: var(--light-bg); }
+.section-header { text-align: center; margin-bottom: 32px; }
+.section-header h2 { font-size: 24px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+.section-header p { color: var(--text); font-size: 15px; max-width: 550px; margin: 0 auto; }
+
+/* Ways to Give - 3 column layout */
+.give-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.give-column {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; text-align: center;
+}
+.give-column h3 { font-size: 15px; font-weight: 600; margin: 12px 0 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+.give-column .icon { font-size: 28px; color: var(--teal); }
+.give-column ul { list-style: none; text-align: left; font-size: 13px; color: var(--text); }
+.give-column ul li { padding: 8px 0; border-bottom: 1px solid #F0F0F0; }
+.give-column ul li:last-child { border: none; }
+.give-column ul li i { color: var(--teal); margin-right: 8px; width: 16px; }
+
+/* Impact cards */
+.impact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.impact-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; text-align: center;
+}
+.impact-card .number { font-size: 32px; font-weight: 700; color: var(--teal-dark); font-family: 'Montserrat', sans-serif; }
+.impact-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+/* Tax advantages section */
+.tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tax-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px; position: relative;
+}
+.tax-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.tax-card p { font-size: 13px; color: var(--text); line-height: 1.6; }
+.tax-card .badge {
+  position: absolute; top: 12px; right: 12px; background: var(--teal-light); color: var(--teal-dark);
+  font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 4px; text-transform: uppercase;
+}
+
+/* Legacy section */
+.legacy-banner {
+  background: var(--black-overlay);
+  color: #fff; border-radius: var(--radius); padding: 40px; text-align: center;
+}
+.legacy-banner h3 { font-size: 22px; margin-bottom: 12px; color: #fff; }
+.legacy-banner p { opacity: 0.85; font-size: 14px; max-width: 500px; margin: 0 auto 20px; }
+.btn-ghost-light {
+  display: inline-block; border: 2px solid var(--teal); color: var(--teal);
+  padding: 10px 28px; border-radius: 4px; font-family: 'Montserrat', sans-serif;
+  font-weight: 600; font-size: 13px; text-decoration: none; text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.btn-ghost-light:hover { background: var(--teal); color: #fff; }
+
+/* FAQ accordion */
+.faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+.faq-item summary {
+  font-family: 'Montserrat', sans-serif; font-weight: 500; color: var(--text-dark);
+  cursor: pointer; font-size: 14px;
+  list-style: none; display: flex; justify-content: space-between; align-items: center;
+}
+.faq-item summary::after { content: '+'; font-size: 20px; color: var(--teal); font-weight: 300; }
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p { margin-top: 8px; font-size: 13px; color: var(--text); padding-left: 4px; }
+
+/* Designations */
+.designation-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.pill {
+  background: var(--teal-light); border: 1px solid #C8EDF7; border-radius: 20px;
+  padding: 8px 18px; font-size: 13px; color: var(--teal-dark); font-weight: 500;
+}
+
+/* Footer CTA */
+.footer-cta {
+  background: var(--light-bg); text-align: center; padding: 48px 24px;
+  border-top: 1px solid var(--border);
+}
+.footer-cta h3 { font-size: 22px; margin-bottom: 12px; }
+.footer-cta p { color: var(--text); font-size: 14px; margin-bottom: 20px; }
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .give-columns { grid-template-columns: 1fr; }
+  .impact-row { grid-template-columns: 1fr; }
+  .tax-grid { grid-template-columns: 1fr; }
+  .header-banner h1 { font-size: 28px; }
+}
+
+
+
+
+
+
+
+/* Apple-style hover interactions */
+.give-column {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.give-column:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--teal);
+}
+.give-column ul li {
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  padding-left: 8px;
+  cursor: pointer;
+}
+.give-column ul li:hover {
+  background: var(--teal-light);
+  padding-left: 14px;
+  border-bottom-color: transparent;
+}
+.give-column ul li:hover i {
+  transform: scale(1.2);
+}
+.give-column ul li i {
+  transition: transform 0.2s ease;
+}
+.give-column .icon {
+  transition: transform 0.3s ease;
+}
+.give-column:hover .icon {
+  transform: scale(1.15);
+}
+
+/* Apple-style hover interactions */
+.give-column {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  cursor: pointer;
+}
+.give-column:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--teal) !important;
+}
+.give-column ul li {
+  transition: all 0.2s ease !important;
+  border-radius: 6px;
+  padding-left: 8px !important;
+  cursor: pointer;
+}
+.give-column ul li:hover {
+  background: var(--teal-light) !important;
+  padding-left: 16px !important;
+  border-bottom-color: transparent !important;
+}
+.give-column ul li:hover i {
+  transform: scale(1.2);
+}
+.give-column ul li i {
+  transition: transform 0.2s ease;
+}
+.give-column .icon {
+  transition: transform 0.3s ease;
+}
+.give-column:hover .icon {
+  transform: scale(1.15);
+}
+
+</style>
+</head>
+<body>
+<nav class="nav-bar">
+  <a href="index.html" class="logo"><img src="images/slbc-logo-white.png" alt="Sugar Land Baptist Church" style="height:80px;vertical-align:middle;margin:-10px 0;"></a>
+  <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="connect.html">Connect</a>
+      <a href="give.html" class="give-btn active">Give</a>
+      <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- -->
+
+<div class="header-banner">
+<h1>Give Generously</h1>
+<p>Every gift, no matter the size, fuels our mission to share the love of Christ in Sugar Land and beyond.</p>
+<a class="btn-solid" href="#"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
+</div>
+<div class="container">
+</div>
+
+<section>
+<div class="container">
+<div class="section-header">
+<h2>Your Generosity at Work</h2>
+<p>Sugar Land Baptist Church operates entirely through the generous gifts of our members and guests.</p>
+</div>
+<div class="impact-row">
+<div class="impact-card">
+<div class="number">100%</div>
+<div class="label">of operations funded by giving</div>
+</div>
+<div class="impact-card">
+<div class="number">$644K</div>
+<div class="label">given to missions last year</div>
+</div>
+<div class="impact-card">
+<div class="number">250+</div>
+<div class="label">families served through outreach</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt-bg">
+<div class="container">
+<div class="section-header">
+<h2>Ways to Give</h2>
+<p>Choose the giving method that works best for you.</p>
+</div>
+<div class="give-columns">
+<!-- Column 1: Give Now -->
+<div class="give-column">
+<div class="icon"><i class="fa-solid fa-bolt"></i></div>
+<h3>Give Now</h3>
+<ul>
+<li><i class="fa-solid fa-credit-card"></i> Credit / Debit Card</li>
+<li><i class="fa-solid fa-building-columns"></i> ACH Bank Transfer</li>
+<li><i class="fa-brands fa-apple"></i> Apple Pay</li>
+<li><i class="fa-solid fa-envelope"></i> Mail a Check</li>
+<li><i class="fa-solid fa-box"></i> Offering Drop Box</li>
+<li><i class="fa-brands fa-bitcoin"></i> Cryptocurrency</li>
+</ul>
+</div>
+<!-- Column 2: Give Regularly -->
+<div class="give-column">
+<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+<h3>Give Regularly</h3>
+<ul>
+<li><i class="fa-solid fa-calendar-check"></i> Recurring Online Gift</li>
+<li><i class="fa-solid fa-clock"></i> Weekly, Bi-weekly, or Monthly</li>
+<li><i class="fa-solid fa-sliders"></i> Adjust or cancel anytime</li>
+<li><i class="fa-solid fa-bell"></i> Email receipts automatic</li>
+</ul>
+<p style="font-size: 12px; color: var(--text-muted); margin-top: 12px; font-style: italic;">
+          Set it and forget it. Consistent giving helps us plan and serve better.
+        </p>
+</div>
+<!-- Column 3: Plan a Gift -->
+<div class="give-column">
+<div class="icon"><i class="fa-solid fa-seedling"></i></div>
+<h3>Plan a Legacy Gift</h3>
+<ul>
+<li><i class="fa-solid fa-chart-line"></i> Stocks &amp; Securities</li>
+<li><i class="fa-solid fa-file-signature"></i> Bequests (Will)</li>
+<li><i class="fa-solid fa-shield-halved"></i> Life Insurance Beneficiary</li>
+<li><i class="fa-solid fa-landmark"></i> IRA / RMD Distributions</li>
+<li><i class="fa-solid fa-hand-holding-dollar"></i> Donor-Advised Funds</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section style="padding:32px 0;">
+<div class="container" style="text-align:center;">
+<div style="background:var(--teal-light);border:1px solid #C8EDF7;border-radius:8px;padding:24px 32px;max-width:600px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
+<i class="fa-solid fa-rotate" style="font-size:28px;color:var(--teal-dark);"></i>
+<div style="text-align:left;">
+<h4 style="font-size:14px;font-weight:600;margin-bottom:4px;">Set It &amp; Forget It</h4>
+<p style="font-size:13px;color:var(--text);margin:0;">Schedule weekly, bi-weekly, or monthly gifts that give automatically, even when life takes you away from Sunday morning.</p>
+</div>
+<a class="btn-solid" href="#" style="font-size:11px;padding:10px 20px;white-space:nowrap;"><i class="fa-solid fa-calendar-check"></i>  Set Up Recurring</a>
+</div>
+</div>
+<div class="container" style="text-align:center;padding:0;margin-top:24px;">
+<p style="font-size:12px;color:var(--text-muted);margin:0;"><i class="fa-solid fa-circle-check" style="color:var(--teal);"></i>  <strong>100% of your gift goes to ministry.</strong> During checkout, you can optionally cover the small processing fee so even more reaches our mission.</p>
+</div></section>
+
+<section>
+<div class="container">
+<div class="section-header">
+<h2>Make Your Generosity Go Further</h2>
+<p>These options can maximize your impact while providing tax benefits. You don't need to itemize to benefit from some of these.</p>
+</div>
+<div class="tax-grid">
+<div class="tax-card">
+<div class="badge">Popular</div>
+<h4><i class="fa-solid fa-chart-line" style="color: var(--teal); margin-right: 6px;"></i> Appreciated Securities</h4>
+<p>Donate stocks or mutual funds directly instead of selling first. You avoid capital gains tax AND receive a deduction for the full market value. A $10,000 stock with a $3,000 basis saves you ~$700 in capital gains taxes vs. selling and donating cash.</p>
+</div>
+<div class="tax-card">
+<h4><i class="fa-solid fa-landmark" style="color: var(--teal); margin-right: 6px;"></i> IRA Required Minimum Distributions</h4>
+<p>If you're 70½+, you can direct up to $105,000/year from your IRA directly to SLBC. It satisfies your RMD without increasing your taxable income. Often the most tax-efficient way to give.</p>
+</div>
+<div class="tax-card">
+<h4><i class="fa-solid fa-hand-holding-dollar" style="color: var(--teal); margin-right: 6px;"></i> Donor-Advised Funds</h4>
+<p>Already have a DAF (Fidelity Charitable, Schwab, etc.)? Recommend a grant to Sugar Land Baptist Church. Fast, simple, and your DAF handles the paperwork.</p>
+</div>
+<div class="tax-card">
+<h4><i class="fa-brands fa-bitcoin" style="color: var(--teal); margin-right: 6px;"></i> Cryptocurrency</h4>
+<p>Donate Bitcoin, Ethereum, or other crypto directly. Like stocks, donating appreciated crypto avoids capital gains and provides a deduction for fair market value.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt-bg">
+<div class="container">
+<div class="legacy-banner">
+<h3><i class="fa-solid fa-infinity"></i>  Leave a Lasting Legacy</h3>
+<p>Estate gifts ensure Sugar Land Baptist Church continues its mission for generations. Even a small percentage of your estate can create permanent impact.</p>
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+<div style="text-align: center;">
+<div style="font-size: 14px; opacity: 0.9;">Bequests</div>
+<div style="font-size: 11px; opacity: 0.6;">Name SLBC in your will</div>
+</div>
+<div style="color: var(--teal); font-size: 20px;">•</div>
+<div style="text-align: center;">
+<div style="font-size: 14px; opacity: 0.9;">Beneficiary Designations</div>
+<div style="font-size: 11px; opacity: 0.6;">Insurance or retirement accounts</div>
+</div>
+<div style="color: var(--teal); font-size: 20px;">•</div>
+<div style="text-align: center;">
+<div style="font-size: 14px; opacity: 0.9;">Charitable Trusts</div>
+<div style="font-size: 11px; opacity: 0.6;">Income for you, gift for SLBC</div>
+</div>
+</div>
+<a class="btn-ghost-light" href="#">Learn About Legacy Giving</a>
+</div>
+</div>
+</section>
+
+
+
+<div class="container" style="padding:16px 24px;margin-bottom:16px;">
+<div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+<i class="fa-solid fa-file-invoice-dollar" style="font-size:24px;color:var(--teal);"></i>
+<div style="flex:1;">
+<h4 style="font-size:14px;font-weight:600;margin-bottom:4px;">Financial Transparency</h4>
+<p style="font-size:13px;color:var(--text);margin:0;">Sugar Land Baptist Church is committed to faithful stewardship. Our annual budget of $4,422,314 is funded entirely by the generosity of our members. Weekly financial updates are published in our Sunday bulletin.</p>
+</div>
+</div>
+</div><section class="alt-bg">
+<div class="container">
+<div class="section-header">
+<h2>Common Questions</h2>
+</div>
+<details class="faq-item">
+<summary>Is my gift tax-deductible?</summary>
+<p>Yes. Sugar Land Baptist Church is a 501(c)(3) nonprofit organization. All gifts are tax-deductible to the extent allowed by law. You'll receive an annual giving statement each January for your records.</p>
+</details>
+<details class="faq-item">
+<summary>How do I set up recurring giving?</summary>
+<p>Click "Give Online Now," create a PushPay account, and select "Recurring" during checkout. You can choose weekly, bi-weekly, or monthly. Adjust or cancel anytime from your PushPay account.</p>
+</details>
+<details class="faq-item">
+<summary>How do I transfer stock to SLBC?</summary>
+<p>Contact Kary Gutierrez, our Business Administrator, at 281.275.6513 for DTC transfer instructions and our brokerage account details. Most transfers complete in 3-5 business days.</p>
+</details>
+<details class="faq-item">
+<summary>Can I give cryptocurrency?</summary>
+<p>Yes! Our PushPay integration accepts Bitcoin, Ethereum, and other major cryptocurrencies. Select "Crypto" as your payment method when giving online.</p>
+</details>
+<details class="faq-item">
+<summary>Where do I mail a check?</summary>
+<p>Sugar Land Baptist Church<br/>16755 Southwest Freeway<br/>Sugar Land, TX 77479<br/><br/>Make checks payable to "Sugar Land Baptist Church." Include your desired designation in the memo line.</p>
+</details>
+<details class="faq-item">
+<summary>How can I get a copy of my giving history?</summary>
+<p>Log into your PushPay account to view your full giving history anytime. Annual statements are also mailed each January. Contact the church office if you need assistance.</p>
+</details>
+<details class="faq-item">
+<summary>How do I stop receiving mailing envelopes?</summary>
+<p>Contact Kary Gutierrez at 281.275.6513. Many members switch to online-only giving and no longer need physical envelopes.</p>
+</details>
+</div>
+</section>
+
+
+<div class="footer-cta">
+<h3>Ready to Give?</h3>
+<p>Thank you for your generosity. Every gift makes a difference.</p>
+<a class="btn-solid" href="#"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
+<p style="font-size:13px;color:var(--text-muted);margin-top:16px;">Questions? Contact Kary Gutierrez, Business Administrator • 281.275.6513</p>
+</div>
+<footer class="site-footer">
+  <p><strong>Sugar Land Baptist Church</strong></p>
+  <p>16755 Southwest Fwy, Sugar Land TX 77479 &bull; 281.980.4431</p>
+  <div class="social">
+    <a href="https://www.youtube.com/@sugarlandbaptist" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.facebook.com/sugarlandbaptist" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com/sugarlandbaptist" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <div class="footer-links">
+    <a href="students.html">Students</a>
+    <a href="missions.html">Missions</a>
+    <a href="give.html">Give</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="updated">Last updated August 2026 &bull; &copy; 2026 Sugar Land Baptist Church</p>
+</footer>
+<script src="script.js"></script>
+<a href="https://forms.gle/Q7KGLz8gP8FWhJHK7" target="_blank" id="feedback-btn" style="position:fixed;bottom:24px;right:24px;background:#12B0DF;color:#fff;padding:12px 20px;border-radius:30px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.2)'">
+  <span style="font-size:18px;">💬</span> Feedback
+</a>
+</body></html>

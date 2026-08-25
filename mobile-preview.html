@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLBC Mobile Preview</title>
+<link rel="stylesheet" href="fonts/local-styles.css">
+<style>
+body {
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+.phone-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.page-selector {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.page-selector a {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.page-selector a:hover, .page-selector a.active {
+  background: #12B0DF;
+  color: #fff;
+  border-color: #12B0DF;
+}
+.phone-frame {
+  width: 375px;
+  height: 812px;
+  border-radius: 40px;
+  border: 8px solid #1a1a1a;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 0 0 2px #333;
+  position: relative;
+  background: #fff;
+}
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: #1a1a1a;
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+}
+.phone-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.phone-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  max-width: 400px;
+}
+</style>
+</head>
+<body>
+<div class="phone-label">📱 Mobile Preview — Minimalist Experience</div>
+
+<div class="page-selector" id="pages">
+  <a href="#" onclick="loadPage('index.html')" class="active">Home</a>
+  <a href="#" onclick="loadPage('about.html')">About</a>
+  <a href="#" onclick="loadPage('sermons.html')">Sermons</a>
+  <a href="#" onclick="loadPage('events.html')">Events</a>
+  <a href="#" onclick="loadPage('connect.html')">Connect</a>
+  <a href="#" onclick="loadPage('give.html')">Give</a>
+  <a href="#" onclick="loadPage('contact.html')">Contact</a>
+  <a href="#" onclick="loadPage('students.html')">Students</a>
+  <a href="#" onclick="loadPage('missions.html')">Missions</a>
+</div>
+
+<div class="phone-frame">
+  <div class="phone-content">
+    <iframe id="phone-iframe" src="index.html"></iframe>
+  </div>
+</div>
+
+<div class="note">
+  This preview simulates how the site appears on a mobile device.<br>
+  The responsive CSS automatically adapts the layout for narrow screens.
+</div>
+
+<script>
+function loadPage(page) {
+  document.getElementById('phone-iframe').src = page;
+  // Update active button
+  document.querySelectorAll('.page-selector a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
