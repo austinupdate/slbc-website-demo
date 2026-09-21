@@ -64,7 +64,7 @@ section.alt-bg { background: var(--light-bg); }
 .section-header p { color: var(--text); font-size: 15px; max-width: 550px; margin: 0 auto; }
 
 /* Ways to Give - 3 column layout */
-.give-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.give-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .give-column {
   background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 24px; text-align: center;
@@ -221,6 +221,32 @@ section.alt-bg { background: var(--light-bg); }
   transform: scale(1.15);
 }
 
+
+/* Ways to Give — vertical arrow list (FBD pattern, SLBC theme) */
+.give-list { max-width: 640px; margin: 0 auto; border-top: 1px solid var(--border); }
+.give-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 10px; border-bottom: 1px solid var(--border);
+  text-decoration: none; color: var(--text-dark);
+  font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 18px;
+  transition: background 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+}
+.give-row-label { display: flex; flex-direction: column; }
+.give-row-sub { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 12px; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
+.give-row i { color: var(--teal); font-size: 15px; flex-shrink: 0; transition: transform 0.2s ease; }
+.give-row:hover { background: var(--teal-light); padding-left: 20px; color: var(--teal-dark); }
+.give-row:hover .give-row-sub { color: var(--teal-dark); }
+.give-row:hover i { transform: translateX(6px); }
+.give-row.primary { background: var(--teal-light); border-left: 3px solid var(--teal); }
+.give-row.primary:hover { background: #D9F2FA; }
+@media (max-width: 768px) { .give-row { font-size: 16px; padding: 16px 8px; } }
+
+/* Teaser info cards */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.info-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; display:flex; align-items:center; gap:10px; }
+.info-card h4 i { color: var(--teal); }
+.info-card p { font-size: 13px; color: var(--text); line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -243,17 +269,53 @@ section.alt-bg { background: var(--light-bg); }
 <!-- -->
 
 <div class="header-banner">
-<h1>Give Generously</h1>
-<p>Every gift, no matter the size, fuels our mission to share the love of Christ in Sugar Land and beyond.</p>
-<a class="btn-solid" href="#"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
+<h1>Experience the Power, Impact, and Joy of Generosity</h1>
+<p style="font-style:italic;">“Bring the whole tithe into the storehouse… Test me in this,” says the Lord Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it.”</p>
+<p style="font-size:13px;opacity:0.75;margin-top:8px;letter-spacing:0.05em;">MALACHI 3:10 (NIV)</p>
+<a class="btn-solid" href="https://pushpay.com/g/sugarlandbaptist?fnd=Budget&amp;fndv=lock&amp;rcv=false&amp;r=No" target="_blank" rel="noopener"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
 </div>
 <div class="container">
 </div>
 
+<section class="alt-bg">
+<div class="container">
+<div class="section-header">
+<h2>Ways to Give</h2>
+<p>Giving is an act of worship. Choose the path that works best for you. Every gift supports the ministries of Sugar Land Baptist Church.</p>
+</div>
+<div class="give-list">
+<a class="give-row primary" href="https://pushpay.com/g/sugarlandbaptist?fnd=Budget&amp;fndv=lock&amp;rcv=false&amp;r=No" target="_blank" rel="noopener">
+<span class="give-row-label">Give Now<span class="give-row-sub">General Fund. Supports every ministry and the daily work of our church.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="give-row" href="https://pushpay.com/g/sugarlandbaptist?fnd=Budget&amp;r=Monthly" target="_blank" rel="noopener">
+<span class="give-row-label">Give Regularly<span class="give-row-sub">Set up a recurring weekly, bi-weekly, or monthly gift.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="give-row" href="legacy-giving.html">
+<span class="give-row-label">Legacy Giving<span class="give-row-sub">Remember SLBC through your will, estate, or beneficiary designations.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="give-row" href="non-cash-assets.html">
+<span class="give-row-label">Non-Cash Assets<span class="give-row-sub">Give stocks, securities, or cryptocurrency and maximize your impact.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="give-row" href="ira-distributions.html">
+<span class="give-row-label">IRA Distributions<span class="give-row-sub">Qualified charitable distributions for givers 70.5 and older.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="give-row" href="giving-annuities.html">
+<span class="give-row-label">Charitable Gift Annuities<span class="give-row-sub">Make a gift that provides you income for life.</span></span>
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</section>
+
 <section>
 <div class="container">
 <div class="section-header">
-<h2>Your Generosity at Work</h2>
+<h2>Your Generosity Changes Lives</h2>
 <p>Sugar Land Baptist Church operates entirely through the generous gifts of our members and guests.</p>
 </div>
 <div class="impact-row">
@@ -271,56 +333,6 @@ section.alt-bg { background: var(--light-bg); }
 </div>
 </div>
 </div>
-</section>
-
-<section class="alt-bg">
-<div class="container">
-<div class="section-header">
-<h2>Ways to Give</h2>
-<p>Choose the giving method that works best for you.</p>
-</div>
-<div class="give-columns">
-<!-- Column 1: Give Now -->
-<div class="give-column">
-<div class="icon"><i class="fa-solid fa-bolt"></i></div>
-<h3>Give Now</h3>
-<ul>
-<li><i class="fa-solid fa-credit-card"></i> Credit / Debit Card</li>
-<li><i class="fa-solid fa-building-columns"></i> ACH Bank Transfer</li>
-<li><i class="fa-brands fa-apple"></i> Apple Pay</li>
-<li><i class="fa-solid fa-envelope"></i> Mail a Check</li>
-<li><i class="fa-solid fa-box"></i> Offering Drop Box</li>
-<li><i class="fa-brands fa-bitcoin"></i> Cryptocurrency</li>
-</ul>
-</div>
-<!-- Column 2: Give Regularly -->
-<div class="give-column">
-<div class="icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-<h3>Give Regularly</h3>
-<ul>
-<li><i class="fa-solid fa-calendar-check"></i> Recurring Online Gift</li>
-<li><i class="fa-solid fa-clock"></i> Weekly, Bi-weekly, or Monthly</li>
-<li><i class="fa-solid fa-sliders"></i> Adjust or cancel anytime</li>
-<li><i class="fa-solid fa-bell"></i> Email receipts automatic</li>
-</ul>
-<p style="font-size: 12px; color: var(--text-muted); margin-top: 12px; font-style: italic;">
-          Set it and forget it. Consistent giving helps us plan and serve better.
-        </p>
-</div>
-<!-- Column 3: Plan a Gift -->
-<div class="give-column">
-<div class="icon"><i class="fa-solid fa-seedling"></i></div>
-<h3>Plan a Legacy Gift</h3>
-<ul>
-<li><i class="fa-solid fa-chart-line"></i> Stocks &amp; Securities</li>
-<li><i class="fa-solid fa-file-signature"></i> Bequests (Will)</li>
-<li><i class="fa-solid fa-shield-halved"></i> Life Insurance Beneficiary</li>
-<li><i class="fa-solid fa-landmark"></i> IRA / RMD Distributions</li>
-<li><i class="fa-solid fa-hand-holding-dollar"></i> Donor-Advised Funds</li>
-</ul>
-</div>
-</div>
-</div>
 </section><section style="padding:32px 0;">
 <div class="container" style="text-align:center;">
 <div style="background:var(--teal-light);border:1px solid #C8EDF7;border-radius:8px;padding:24px 32px;max-width:600px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
@@ -329,42 +341,28 @@ section.alt-bg { background: var(--light-bg); }
 <h4 style="font-size:14px;font-weight:600;margin-bottom:4px;">Set It &amp; Forget It</h4>
 <p style="font-size:13px;color:var(--text);margin:0;">Schedule weekly, bi-weekly, or monthly gifts that give automatically, even when life takes you away from Sunday morning.</p>
 </div>
-<a class="btn-solid" href="#" style="font-size:11px;padding:10px 20px;white-space:nowrap;"><i class="fa-solid fa-calendar-check"></i>  Set Up Recurring</a>
+<a class="btn-solid" href="https://pushpay.com/g/sugarlandbaptist?fnd=Budget&amp;r=Monthly" target="_blank" rel="noopener" style="font-size:11px;padding:10px 20px;white-space:nowrap;"><i class="fa-solid fa-calendar-check"></i>  Set Up Recurring</a>
 </div>
 </div>
 <div class="container" style="text-align:center;padding:0;margin-top:24px;">
 <p style="font-size:12px;color:var(--text-muted);margin:0;"><i class="fa-solid fa-circle-check" style="color:var(--teal);"></i>  <strong>100% of your gift goes to ministry.</strong> During checkout, you can optionally cover the small processing fee so even more reaches our mission.</p>
 </div></section>
 
-<section>
+<section id="tax-advantages">
 <div class="container">
 <div class="section-header">
 <h2>Make Your Generosity Go Further</h2>
-<p>These options can maximize your impact while providing tax benefits. You don't need to itemize to benefit from some of these.</p>
+<p>Beyond cash and card, there are tax-smart ways to give that can increase your impact. Explore each option to learn more.</p>
 </div>
-<div class="tax-grid">
-<div class="tax-card">
-<div class="badge">Popular</div>
-<h4><i class="fa-solid fa-chart-line" style="color: var(--teal); margin-right: 6px;"></i> Appreciated Securities</h4>
-<p>Donate stocks or mutual funds directly instead of selling first. You avoid capital gains tax AND receive a deduction for the full market value. A $10,000 stock with a $3,000 basis saves you ~$700 in capital gains taxes vs. selling and donating cash.</p>
-</div>
-<div class="tax-card">
-<h4><i class="fa-solid fa-landmark" style="color: var(--teal); margin-right: 6px;"></i> IRA Required Minimum Distributions</h4>
-<p>If you're 70½+, you can direct up to $105,000/year from your IRA directly to SLBC. It satisfies your RMD without increasing your taxable income. Often the most tax-efficient way to give.</p>
-</div>
-<div class="tax-card">
-<h4><i class="fa-solid fa-hand-holding-dollar" style="color: var(--teal); margin-right: 6px;"></i> Donor-Advised Funds</h4>
-<p>Already have a DAF (Fidelity Charitable, Schwab, etc.)? Recommend a grant to Sugar Land Baptist Church. Fast, simple, and your DAF handles the paperwork.</p>
-</div>
-<div class="tax-card">
-<h4><i class="fa-brands fa-bitcoin" style="color: var(--teal); margin-right: 6px;"></i> Cryptocurrency</h4>
-<p>Donate Bitcoin, Ethereum, or other crypto directly. Like stocks, donating appreciated crypto avoids capital gains and provides a deduction for fair market value.</p>
-</div>
+<div class="info-grid">
+<div class="info-card"><h4><i class="fa-solid fa-chart-line"></i> Non-Cash Assets</h4><p>Give appreciated stock, mutual funds, cryptocurrency, or through a donor-advised fund, and avoid capital gains tax. <a href="non-cash-assets.html" style="color:var(--teal-dark);font-weight:600;">Learn more &rarr;</a></p></div>
+<div class="info-card"><h4><i class="fa-solid fa-landmark"></i> IRA Distributions</h4><p>If you are 70&frac12; or older, give directly from your IRA, satisfy your RMD, and give tax-free. <a href="ira-distributions.html" style="color:var(--teal-dark);font-weight:600;">Learn more &rarr;</a></p></div>
+<div class="info-card"><h4><i class="fa-solid fa-seedling"></i> Charitable Gift Annuities</h4><p>Make a gift that pays you fixed income for life, then blesses SLBC. <a href="giving-annuities.html" style="color:var(--teal-dark);font-weight:600;">Learn more &rarr;</a></p></div>
 </div>
 </div>
 </section>
 
-<section class="alt-bg">
+<section id="legacy" class="alt-bg">
 <div class="container">
 <div class="legacy-banner">
 <h3><i class="fa-solid fa-infinity"></i>  Leave a Lasting Legacy</h3>
@@ -385,7 +383,7 @@ section.alt-bg { background: var(--light-bg); }
 <div style="font-size: 11px; opacity: 0.6;">Income for you, gift for SLBC</div>
 </div>
 </div>
-<a class="btn-ghost-light" href="#">Learn About Legacy Giving</a>
+<a class="btn-ghost-light" href="legacy-giving.html">Learn About Legacy Giving</a>
 </div>
 </div>
 </section>
@@ -440,7 +438,7 @@ section.alt-bg { background: var(--light-bg); }
 <div class="footer-cta">
 <h3>Ready to Give?</h3>
 <p>Thank you for your generosity. Every gift makes a difference.</p>
-<a class="btn-solid" href="#"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
+<a class="btn-solid" href="https://pushpay.com/g/sugarlandbaptist?fnd=Budget&amp;fndv=lock&amp;rcv=false&amp;r=No" target="_blank" rel="noopener"><i class="fa-solid fa-heart"></i>  Give Online Now</a>
 <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">Questions? Contact Kary Gutierrez, Business Administrator • 281.275.6513</p>
 </div>
 <footer class="site-footer">

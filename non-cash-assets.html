@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="fonts/local-styles.css">
+<link rel="stylesheet" href="style.css">
+<title>Non-Cash Assets — Sugar Land Baptist Church</title>
+<style>
+
+:root {
+  --teal: #12B0DF; --teal-dark: #038AA8; --teal-light: #E8F8FC;
+  --black-overlay: rgba(0, 0, 0, 0.78);
+  --text: #666666; --text-dark: #333333; --text-muted: #999999;
+  --white: #FFFFFF; --light-bg: #F7FAFB; --border: #E0E0E0; --radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Open Sans', Arial, sans-serif; background: var(--white); color: var(--text); line-height: 1.7; font-size: 14px; font-weight: 500; }
+h1, h2, h3, h4 { font-family: 'Montserrat', Helvetica, Arial, sans-serif; color: var(--text-dark); }
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+section { padding: 48px 0; position: relative; }
+section.alt-bg { background: var(--light-bg); }
+.section-header { text-align: center; margin-bottom: 32px; }
+.section-header h2 { font-size: 24px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.02em; }
+.section-header p { color: var(--text); font-size: 15px; max-width: 550px; margin: 0 auto; }
+.header-banner { background: var(--black-overlay); color: #fff; text-align: center; padding: 60px 24px 48px; }
+.header-banner h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; color: #fff; }
+.header-banner p { font-size: 16px; opacity: 0.9; max-width: 620px; margin: 0 auto; font-weight: 400; font-style: italic; }
+.btn-solid { display: inline-block; background: var(--teal); color: #fff; padding: 14px 36px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s ease; border: 2px solid var(--teal); }
+.btn-solid:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+.btn-ghost { display: inline-block; border: 2px solid var(--teal); color: var(--teal); padding: 12px 32px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s ease; }
+.btn-ghost:hover { background: var(--teal); color: #fff; }
+.back-link { display:inline-block; margin-bottom: 8px; color: var(--teal-dark); text-decoration: none; font-size: 13px; font-weight:600; font-family:'Montserrat',sans-serif; }
+.back-link:hover { text-decoration: underline; }
+.lead { font-size: 16px; color: var(--text-dark); line-height: 1.8; }
+.lead strong { color: var(--teal-dark); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+.step { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; }
+.step .num { width: 44px; height: 44px; border-radius: 50%; background: var(--teal-light); color: var(--teal-dark); font-family:'Montserrat',sans-serif; font-weight:700; font-size:18px; display:flex; align-items:center; justify-content:center; margin: 0 auto 14px; }
+.step h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+.step p { font-size: 13px; color: var(--text); }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.info-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 10px; display:flex; align-items:center; gap:10px; }
+.info-card h4 i { color: var(--teal); }
+.info-card p { font-size: 13px; color: var(--text); line-height: 1.6; }
+.example { background: var(--teal-light); border: 1px solid #C8EDF7; border-radius: var(--radius); padding: 32px; }
+.example h3 { font-size: 18px; color: var(--teal-dark); margin-bottom: 6px; }
+.example .persona { font-size: 13px; color: var(--text); margin-bottom: 20px; font-style: italic; }
+.example-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 18px; }
+.example-stat { background: var(--white); border-radius: var(--radius); padding: 16px; text-align: center; }
+.example-stat .n { font-size: 22px; font-weight: 700; color: var(--teal-dark); font-family:'Montserrat',sans-serif; }
+.example-stat .l { font-size: 11px; color: var(--text-muted); margin-top: 4px; line-height:1.4; }
+.example ul { list-style: none; margin-top: 4px; }
+.example ul li { font-size: 13px; padding: 6px 0 6px 26px; position: relative; color: var(--text-dark); }
+.example ul li i { position: absolute; left: 0; top: 8px; color: var(--teal); }
+.benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.benefit-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.benefit-card h3 { font-size: 16px; margin-bottom: 14px; display:flex; align-items:center; gap:10px; }
+.benefit-card h3 i { color: var(--teal); }
+.benefit-card ul { list-style: none; }
+.benefit-card ul li { font-size: 13px; padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid #F0F0F0; }
+.benefit-card ul li:last-child { border: none; }
+.benefit-card ul li i { position: absolute; left: 0; top: 10px; color: var(--teal); font-size: 12px; }
+.sample-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.sample-box h3 { font-size: 16px; margin-bottom: 12px; }
+.sample-box blockquote { background: var(--teal-light); border-left: 3px solid var(--teal); border-radius: 6px; padding: 18px 22px; margin: 14px 0; font-style: italic; color: var(--text-dark); font-size: 14px; line-height: 1.7; }
+.sample-box p { font-size: 13px; color: var(--text); }
+.callout-box { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: var(--radius); padding: 24px 28px; }
+.callout-box h3 { font-size: 15px; margin-bottom: 10px; }
+.callout-box p { font-size: 13px; color: var(--text); }
+.considerations { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: var(--radius); padding: 24px 28px; }
+.considerations h3 { font-size: 15px; margin-bottom: 12px; }
+.considerations ul { list-style: none; }
+.considerations ul li { font-size: 13px; padding: 6px 0 6px 24px; position: relative; }
+.considerations ul li i { position: absolute; left: 0; top: 9px; color: var(--teal); font-size: 12px; }
+.contact-cta { background: var(--black-overlay); color: #fff; border-radius: var(--radius); padding: 40px; text-align: center; }
+.contact-cta h3 { color:#fff; font-size: 22px; margin-bottom: 12px; }
+.contact-cta p { opacity: 0.9; font-size: 14px; max-width: 520px; margin: 0 auto 8px; }
+.contact-cta .contact-name { font-family:'Montserrat',sans-serif; font-weight:600; font-size:15px; margin-top:16px; color:#fff; }
+.contact-cta .contact-detail { font-size: 13px; opacity: 0.85; }
+.disclaimer { font-size: 11px; color: var(--text-muted); line-height: 1.6; max-width: 760px; margin: 0 auto; text-align:center; }
+@media (max-width: 768px) {
+  .steps { grid-template-columns: 1fr; }
+  .example-grid { grid-template-columns: 1fr 1fr; }
+  .benefits { grid-template-columns: 1fr; }
+  .header-banner h1 { font-size: 28px; }
+}
+
+</style>
+</head>
+<body>
+<nav class="nav-bar">
+  <a href="index.html" class="logo"><img src="images/slbc-logo-white.png" alt="Sugar Land Baptist Church" style="height:80px;vertical-align:middle;margin:-10px 0;"></a>
+  <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="events.html">Events</a>
+      <a href="connect.html">Connect</a>
+      <a href="give.html" class="give-btn active">Give</a>
+      <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="header-banner">
+<h1>Non-Cash Assets</h1>
+<p>Give beyond the checkbook and make every dollar go further.</p>
+</div>
+<section>
+<div class="container-narrow">
+<a href="give.html" class="back-link">&larr; Back to Giving</a>
+<p class="lead">Some of the most powerful ways to give do not involve your checkbook at all. Gifts of <strong>appreciated stock, mutual funds, cryptocurrency, or donor-advised funds</strong> can increase your impact while reducing the taxes you would owe if you sold those assets first. In many cases you avoid capital gains tax and still deduct the full value of your gift.</p>
+</div>
+</section>
+
+<section class="alt-bg">
+<div class="container">
+<div class="section-header"><h2>Ways to Give Non-Cash Assets</h2></div>
+<div class="info-grid">
+<div class="info-card"><h4><i class="fa-solid fa-chart-line"></i> Appreciated Stock</h4><p>Donate stock you have held more than a year and avoid capital gains tax entirely, while deducting the full market value.</p></div>
+<div class="info-card"><h4><i class="fa-solid fa-coins"></i> Mutual Funds</h4><p>Give shares of appreciated mutual funds directly, with the same tax advantages as individual stocks.</p></div>
+<div class="info-card"><h4><i class="fa-brands fa-bitcoin"></i> Cryptocurrency</h4><p>Give Bitcoin, Ethereum, or other major cryptocurrencies. Like stock, appreciated crypto avoids capital gains and is deductible at fair market value.</p></div>
+<div class="info-card"><h4><i class="fa-solid fa-hand-holding-dollar"></i> Donor-Advised Funds</h4><p>Already have a DAF at Fidelity Charitable, Schwab, or similar? Recommend a grant to SLBC and let your fund handle the paperwork.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-header"><h2>An Example</h2><p>Here is how giving appreciated stock compares to selling it first. Illustrative only.</p></div>
+<div class="example">
+<h3>Giving stock vs. giving cash</h3>
+<p class="persona">A giver owns $25,000 of stock originally purchased for $10,000.</p>
+<div class="example-grid">
+<div class="example-stat"><div class="n">$25,000</div><div class="l">current value of the stock</div></div>
+<div class="example-stat"><div class="n">$15,000</div><div class="l">gain that would be taxed if sold</div></div>
+<div class="example-stat"><div class="n">~$2,250</div><div class="l">capital gains tax avoided by giving directly</div></div>
+<div class="example-stat"><div class="n">$25,000</div><div class="l">full amount deductible as a gift</div></div>
+</div>
+<ul>
+<li><i class="fa-solid fa-check"></i> By giving the stock directly instead of selling it, the giver avoids the capital gains tax on the $15,000 of growth.</li>
+<li><i class="fa-solid fa-check"></i> They still receive a charitable deduction for the full $25,000 market value.</li>
+<li><i class="fa-solid fa-check"></i> SLBC receives the full value of the gift to put to work in ministry.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="alt-bg">
+<div class="container">
+<div class="section-header"><h2>Benefits</h2></div>
+<div class="benefits">
+<div class="benefit-card"><h3><i class="fa-solid fa-user"></i> For You</h3><ul>
+<li><i class="fa-solid fa-circle-check"></i> Avoid capital gains tax on appreciated assets</li>
+<li><i class="fa-solid fa-circle-check"></i> Deduct the full fair market value of your gift</li>
+<li><i class="fa-solid fa-circle-check"></i> Give more than you could with cash for the same out-of-pocket cost</li>
+<li><i class="fa-solid fa-circle-check"></i> A simple transfer handled by your broker or provider</li>
+</ul></div>
+<div class="benefit-card"><h3><i class="fa-solid fa-church"></i> For SLBC</h3><ul>
+<li><i class="fa-solid fa-circle-check"></i> Receives the full value of the asset for ministry</li>
+<li><i class="fa-solid fa-circle-check"></i> Opens the door for larger, more meaningful gifts</li>
+<li><i class="fa-solid fa-circle-check"></i> Strengthens the church's long-term financial health</li>
+</ul></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container-narrow">
+<div class="callout-box">
+<h3>How to Transfer</h3>
+<p>Stock and mutual fund gifts are made by electronic (DTC) transfer from your brokerage to the church's account. Contact Kary Gutierrez for our transfer instructions and account details. Most transfers complete within a few business days. For cryptocurrency or donor-advised fund gifts, reach out and we will walk you through the steps.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container-narrow">
+<div class="considerations">
+<h3>Things to Consider</h3>
+<ul>
+<li><i class="fa-solid fa-circle-info"></i> To receive the full tax benefit, give assets you have held for more than one year.</li>
+<li><i class="fa-solid fa-circle-info"></i> Do not sell the asset first. Transfer it directly so the capital gains tax is avoided.</li>
+<li><i class="fa-solid fa-circle-info"></i> Your deduction is based on fair market value at the time of the gift.</li>
+<li><i class="fa-solid fa-circle-info"></i> Check with your tax advisor about how these gifts apply to your situation.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="alt-bg">
+<div class="container-narrow">
+<div class="contact-cta">
+<h3>Interested in Learning More?</h3>
+<p>We can provide transfer instructions and answer any questions about giving stock, crypto, or through a donor-advised fund.</p>
+<div class="contact-name">Kary Gutierrez, Business Administrator</div>
+<div class="contact-detail">281.275.6513</div>
+<div style="margin-top:24px;"><a href="give.html" class="btn-ghost" style="border-color:var(--teal);color:var(--teal);">Back to Giving Options</a></div>
+</div>
+</div>
+</section>
+<section style="padding:24px 0 48px;">
+<div class="container-narrow">
+<p class="disclaimer">This information is provided for educational purposes only and is not legal, tax, or financial advice. Figures shown are illustrative and will vary based on your circumstances, timing, and applicable IRS rules. Please consult your own professional advisors. Availability of specific giving arrangements is subject to confirmation.</p>
+</div>
+</section>
+<footer class="site-footer">
+  <p><strong>Sugar Land Baptist Church</strong></p>
+  <p>16755 Southwest Fwy, Sugar Land TX 77479 &bull; 281.980.4431</p>
+  <div class="social">
+    <a href="https://www.youtube.com/@sugarlandbaptist" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    <a href="https://www.facebook.com/sugarlandbaptist" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://www.instagram.com/sugarlandbaptist" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+  <div class="footer-links">
+    <a href="students.html">Students</a>
+    <a href="missions.html">Missions</a>
+    <a href="give.html">Give</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p class="updated">Last updated September 2026 &bull; &copy; 2026 Sugar Land Baptist Church</p>
+</footer>
+<script src="script.js"></script>
+<a href="https://forms.gle/Q7KGLz8gP8FWhJHK7" target="_blank" id="feedback-btn" style="position:fixed;bottom:24px;right:24px;background:#12B0DF;color:#fff;padding:12px 20px;border-radius:30px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:9999;display:flex;align-items:center;gap:8px;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.2)'">
+  <span style="font-size:18px;">💬</span> Feedback
+</a>
+</body></html>
